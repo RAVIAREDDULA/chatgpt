@@ -230,6 +230,8 @@ export class AppComponent {
     );
     this.message.push(this.questions);
     this.filterBy = '';
+
+  
   }
   clearchat() {
     this.message = [];
