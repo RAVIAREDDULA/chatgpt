@@ -1,0 +1,86 @@
+.container {
+    background-color: aqua;
+    border: solid;
+    border-radius: 12px;
+    padding: 12px;
+  }
+  h2 {
+    color: blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+  }
+  p {
+    font-family: Lato;
+    text-align: center;
+    color: black;
+  }
+div {
+    border: 2px solid red;
+    border-radius: 25px;
+    height: 800px;
+    text-align: center;
+    background-color: rgb(182, 178, 178);
+    margin: 4px, 4px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 900px;
+    margin-left: 200px;
+  }
+  .messageto {
+    background-color: #2095fe;
+    color: #fff;
+    margin-right: 20px;
+    text-align: right;
+  
+    border-radius: 50px;
+    margin: 0 15px 20px;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 20px;
+  }
+  .messagefrom {
+    background-color: #e5e4e9;
+    color: #363636;
+    margin-left: 100px;
+    text-align: right;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+  .messageto + .messageto,
+  .messagefrom + .messagefrom {
+    margin-top: -10px;
+  }
+  .button {
+    border-radius: 10px;
+    background-color: #9b4dca;
+    border-color: #9b4dca;
+    color: #ffff;
+  }
+  .button:hover {
+    background-color: #4caf50;
+    color: white;
+  }
+  input {
+    border: 2px solid orange;
+    border-radius: 4px;
+  }
+  img {
+    border-radius: 50px;
+    width: 10%;
+    height: 10%;
+    position: relative;
+    top: 20px;
+  }
+  .rimage {
+    border-radius: 50px;
+    width: 10%;
+    height: 10%;
+    position: relative;
+    right: 380px;
+    top: 70px;
+  }
+  
