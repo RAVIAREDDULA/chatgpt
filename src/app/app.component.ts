@@ -13,7 +13,9 @@ export class AppComponent {
   message: any = [];
   questions: any = [];
   sampleImage ='https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png';
-  sampleImage1 = 'https://res.cloudinary.com/demo/image/upload/c_crop,g_face,h_400,w_400/r_max/c_scale,w_200/lady.jpg';
+  sampleImage1 = 'https://png.pngtree.com/png-vector/20190701/ourmid/pngtree-robot-icon-for-your-project-png-image_1533288.jpg';
+  
+  
   book = [
     { name: 'how are you?', description: 'I am good . Thank you ' },
     {

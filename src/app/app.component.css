@@ -70,15 +70,15 @@ div {
   }
   img {
     border-radius: 50px;
-    width: 10%;
-    height: 10%;
+    width: 8%;
+    height: 8%;
     position: relative;
     top: 20px;
   }
   .rimage {
     border-radius: 50px;
-    width: 10%;
-    height: 10%;
+    width: 8%;
+    height: 8%;
     position: relative;
     right: 380px;
     top: 70px;
