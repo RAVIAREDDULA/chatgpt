@@ -111,6 +111,8 @@ export class AppComponent {
     {
       name: 'does Angular use the jquery library?',
       description:
+
+      
         'Yes, Angular can use jQuery if its present in the app when the application is being bootstrapped. If jQuery is not present in the script path, Angular falls back to its own implementation of the subset of jQuery that we call jQLite. ',
     },
     {
