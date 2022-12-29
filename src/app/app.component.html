@@ -9,7 +9,7 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
     [(ngModel)]="filterBy"
     placeholder="Text to search "
     autocomplete="off"
-    (keyup.enter)="filter()"
+    (keyup.enter)="filter()" size="25"
   />&nbsp;&nbsp;
   <button class="button" (click)="filter()">SUBMIT</button>&nbsp;&nbsp;
   <button class="button" (click)="clearchat()">CLEAR CHAT</button><br />

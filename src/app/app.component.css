@@ -19,7 +19,7 @@ div {
     border-radius: 25px;
     height: 800px;
     text-align: center;
-    background-color: rgb(182, 178, 178);
+    background-color: #ECF0F1;
     margin: 4px, 4px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -27,22 +27,22 @@ div {
     margin-left: 200px;
   }
   .messageto {
-    background-color: #2095fe;
+    background-color: #0909FF;
     color: #fff;
     margin-right: 20px;
     text-align: right;
   
-    border-radius: 50px;
+    border-radius:50px;
     margin: 0 15px 20px;
     padding: 10px 20px;
     position: relative;
     font-size: 20px;
   }
   .messagefrom {
-    background-color: #e5e4e9;
+    background-color:white;
     color: #363636;
     margin-left: 100px;
-    text-align: right;
+    text-align:justify;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
