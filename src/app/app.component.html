@@ -14,11 +14,12 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
   />&nbsp;&nbsp;
   <button class="button" (click)="filter()">SUBMIT</button>&nbsp;&nbsp;
   <button class="button" (click)="clearchat()">CLEAR CHAT</button><br />
-
+   
   <ul *ngFor="let question of message">
+      
      <b class="messageto"><!--<i style="font-size:24px;color:black" class="fa fa-commenting"> </i
       >-->&nbsp;{{ question[i].name }}</b><img [src]="sampleImage" /><br />
       <img [src]="sampleImage1" class="rimage"/><b class="messagefrom"><!--<i style="font-size:24px;color:black;" class="fa fa-commenting"> </i    >-->&nbsp;{{ question[i].description }}</b
     ><br />
-  </ul>   
+  </ul> 
 </div>

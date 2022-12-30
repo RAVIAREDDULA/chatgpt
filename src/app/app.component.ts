@@ -416,17 +416,72 @@ export class AppComponent {
       description:'Yes',
     },
     
+    {
+      name: 'what is naive bayes algorithm?',
+      description:'Naive Bayes algorithm is a collection of classifiers which works on the principles of the Bayes’ theorem. This series of NLP model forms a family of algorithms that can be used for a wide range of classification tasks including sentiment prediction, filtering of spam, classifying documents.Naive Bayes algorithm converges faster and requires less training data. Compared to other discriminative models like logistic regression, Naive Bayes model it takes lesser time to train. This algorithm is perfect for use while working with multiple classes and text classification where the data is dynamic and changes frequently.',
+    },
+    {
+      name: 'explain dependency parsing in nlp?',
+      description:'Dependency Parsing, also known as Syntactic parsing in NLP is a process of assigning syntactic structure to a sentence and identifying its dependency parses. This process is crucial to understand the correlations between the “head” words in the syntactic structure. The process of dependency parsing can be a little complex considering how any sentence can have more than one dependency parses. Multiple parse trees are known as ambiguities. Dependency parsing needs to resolve these ambiguities in order to effectively assign a syntactic structure to a sentence.Dependency parsing can be used in the semantic analysis of a sentence apart from the syntactic structuring.',
+    },
+    {
+      name:'what is nltk how is it different from spacy?',
+      description:'NLTK or Natural Language Toolkit is a series of libraries and programs that are used for symbolic and statistical natural language processing. This toolkit contains some of the most powerful libraries that can work on different ML techniques to break down and understand human language. NLTK is used for Lemmatization, Punctuation, Character count, Tokenization, and Stemming. The difference between NLTK and Spacey are as follows.While NLTK has a collection of programs to choose from, Spacey contains only the best-suited algorithm for a problem in its toolkit. NLTK supports a wider range of languages compared to Spacey (Spacey supports only 7 languages).While Spacey has an object-oriented library, NLTK has a string processing library. Spacey can support word vectors while NLTK cannot',
+    },
+    {
+      name:'is the Gray wolf a mammal?',
+      description:'Yes',
+    },
+    {
+      name:'Where is the largest gray wolf population thought to be found?',
+      description:'Kazakhstan',
+    },
+    {
+      name:'Are the Javanese the largest and politically dominant ethnic group in Indonesia?',
+      description:'Yes',
+    },
+    {
+      name:'When did Islam become the dominant religion in Java and Sumatra?',
+      description:'the end of the 16th century',
+    },
+    {
+      name:'Is James Monrow the fifth president of US?',
+      description:'Yes',
+    },
+    {
+      name:'What is JIT and AOT in Angular',
+      description:'The JIT is nothing but just-in-time compilation which is used to compile the angular application during Runtime in the browser.where as AOT means Ahead-of-Time Compilation, which is used to compile the angular application during BuildTime in the browser',
+    },
+    {
+      name:'What Observables in Angular?',
+      description:'Observables are used to handle asynchronous data, such as streams of data that are received over time. They are often used in Angular for tasks such as making HTTP requests, handling user input events, and managing animations.Observables are created using the Observable constructor, which takes a function called an "observer function" as an argument. The observer function defines how the observable should behave when it is subscribed to.',
+    },
 
-    
+    {
+      name:'How Angular application woks?',
+      description:'Angular is a framework for building client-side applications in HTML, CSS, and JavaScript. When an Angular application is launched, the browser loads the applications HTML file, which includes tags that reference the applications CSS and JavaScript files. The browser then downloads and runs the CSS and JavaScript files, which initialize the application and set up the frameworks runtime environment.The Angular framework uses a component-based architecture, in which an application is made up of a hierarchy of components. Each component is a self-contained unit that controls a portion of the applications UI and logic. The root component, called the root component, is the top-level component in the component hierarchy, and it controls the overall layout and behavior of the application.As the user interacts with the application, the Angular framework updates the component tree and the HTML DOM (Document Object Model) to reflect the current state of the application. The framework uses a two-way data binding mechanism to synchronize the component tree with the UI, so that changes to the component tree are reflected in the UI, and vice versa.'
+    },
+    {
+      name:'What is XML?',
+      description:'XML (eXtensible Markup Language) is a markup language that is used to encode data in a format that is both human-readable and machine-readable. It is based on the Standard Generalized Markup Language (SGML), but is more flexible and easier to use than SGML.XML is used to structure, store, and transport data, and is particularly well-suited for storing and transporting data that is hierarchical in nature, such as a database of employees in a company. XML documents are made up of elements, which are defined by tags, and are used to store data and describe the structure of the document.'
+    },
+    {
+      name:'what typescript?',
+      description:'ypeScript is a programming language that is a strict syntactical superset of JavaScript, and adds optional static typing to the language. It was developed and is maintained by Microsoft.TypeScript is designed for development of large applications and transcompiles to JavaScript. TypeScript is popular among developers because it can help catch errors before the code is run, making the debugging process easier. It also allows for the use of object-oriented programming techniques, such as classes and interfaces, which are not natively supported in JavaScript.TypeScript code is typically written in files with a .ts extension, and then compiled into JavaScript code with a .js extension that can be run in a web browser or on a server.'
+    },
+    {
+      name:'what is React?',
+      description:'React is a JavaScript library for building user interfaces. It was developed by Facebook, and is often used for building single-page applications and mobile applications.React allows developers to create reusable UI components. It works by rendering components to a virtual DOM (a lightweight in-memory representation of the actual DOM), and then updating the actual DOM efficiently when the data changes. This makes it possible to build fast, dynamic web applications.React uses a syntax extension called JSX, which allows you to write HTML-like code in your JavaScript. This can make the code easier to read and understand, especially for developers who are familiar with HTML.'
+    },
+
     ];
 
   filter() {
-    this.questions = this.book.filter((qname) =>qname.name.includes(this.filterBy.toLowerCase()));
+    this.questions = this.book.filter(qname =>qname.name.toLowerCase().includes(this.filterBy.toLowerCase()));
     this.message.push(this.questions);
     this.filterBy = '';
-
-  
-  }
+     
+     }
   clearchat() {
     this.message = [];
   }
