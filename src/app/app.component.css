@@ -32,15 +32,15 @@ div {
     margin-right: 20px;
     text-align: right;
   
-    border-radius:50px;
+    border-radius: 50px;
     margin: 0 15px 20px;
     padding: 10px 20px;
     position: relative;
     font-size: 20px;
   }
   .messagefrom {
-    background-color:white;
-    color: #363636;
+    background-color:#4863A0;
+      color:#fff;
     margin-left: 100px;
     text-align:justify;
     text-overflow: ellipsis;

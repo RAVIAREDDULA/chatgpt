@@ -386,7 +386,38 @@ export class AppComponent {
     {
       name:'history of indian cuisine',
       description:'The history of Indian cuisine consists of cuisine from the Indian subcontinent, which is rich and diverse. The diverse climate in the region, ranging from deep tropical to alpine, has also helped considerably broaden the set of ingredients readily available to the many schools of cookery in India. In many cases, food has become a marker of religious and social identity, with varying taboos and preferences (for instance, a segment of the Jain population consume no roots or subterranean vegetable; see Jain vegetarianism) which has also driven these groups to innovate extensively with the food sources that are deemed acceptable. One strong influence over Indian foods is the longstanding vegetarianism within sections of Indias Hindu and Jain communities. At 31%, slightly less than a third of Indians are vegetarians.The beginning of agriculture in the Indian subcontinent comes from the North-West part of India. As per the Archaeological survey, crops were grown in the cleared forest around 8000 BCE in north Rajasthan. Mehrgarh is a prehistoric site located in Baluchistan, which shows the earliest evidence of farming & herding in South Asia as per Archaeological survey (Mehrgarh is a Neolithic site dated 7000BCE to 3000 BCE).'
-    }
+    },
+    {
+      name: 'was woodrow wilson the thirtieth president of the united states?',
+      description:'No',
+    },
+    {
+      name: 'did woodrow wilson create the league of nations?',
+      description:'No',
+    },
+    {
+      name: 'where was the league of nations created?',
+      description:'Paris',
+    },
+    {
+      name: 'when was woodrow wilson born?',
+      description:'December 28, 1856',
+    },
+    {
+      name: 'who was president when wilson finished congressional government?',
+      description:'Grover Cleveland',
+    },
+    {
+      name: 'where was woodrow wilson born?',
+      description:'Woodrow Wilson was born in Staunton, Virginia',
+    },
+    {
+      name: 'is uruguay a member of the cairns group of exporters of agricultural products ?',
+      description:'Yes',
+    },
+    
+
+    
     ];
 
   filter() {
