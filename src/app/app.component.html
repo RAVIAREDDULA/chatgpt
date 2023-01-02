@@ -2,19 +2,6 @@
 border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
 <div>
 <h2 style="background-color: blue;color: white;margin-top:auto;height:40px;text-align: center;">CHATBOT</h2>
-  <p>
-    <b>Start search Text :) Ex:hi</b>
-  </p>
-  <input
-    type="text"
-    [(ngModel)]="filterBy"
-    placeholder="Text to search "
-    autocomplete="off"
-    (keyup.enter)="filter()" size="25"
-  />&nbsp;&nbsp;
-  <button class="button" (click)="filter()">SUBMIT</button>&nbsp;&nbsp;
-  <button class="button" (click)="clearchat()">CLEAR CHAT</button><br />
-   
   <ul *ngFor="let question of message">
       
      <b class="messageto"><!--<i style="font-size:24px;color:black" class="fa fa-commenting"> </i
@@ -22,4 +9,20 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
       <img [src]="sampleImage1" class="rimage"/><b class="messagefrom"><!--<i style="font-size:24px;color:black;" class="fa fa-commenting"> </i    >-->&nbsp;{{ question[i].description }}</b
     ><br />
   </ul> 
+  
+</div>
+ <div class="sendmesg">
+  
+<p >
+  <!--<b>Start search Text :) Ex:hi</b>
+  <span class="fa fa-meh-o" style="font-size:20px;color:white;margin-left:50px;display:inline;"></span>-->
+<input 
+  type="text"
+  [(ngModel)]="filterBy"
+  placeholder="Write your message here "
+  autocomplete="off"
+  (keyup.enter)="filter()" size="25"
+/>&nbsp;&nbsp;
+<button class="button" (click)="filter()"><b>SUBMIT</b></button>&nbsp;&nbsp;
+<button class="button" (click)="clearchat()"><b>CLEAR CHAT</b></button><br /></p>
 </div>

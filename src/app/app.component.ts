@@ -473,7 +473,60 @@ export class AppComponent {
       name:'what is React?',
       description:'React is a JavaScript library for building user interfaces. It was developed by Facebook, and is often used for building single-page applications and mobile applications.React allows developers to create reusable UI components. It works by rendering components to a virtual DOM (a lightweight in-memory representation of the actual DOM), and then updating the actual DOM efficiently when the data changes. This makes it possible to build fast, dynamic web applications.React uses a syntax extension called JSX, which allows you to write HTML-like code in your JavaScript. This can make the code easier to read and understand, especially for developers who are familiar with HTML.'
     },
+    {
+       name:'The Battle of Plassey was fought in',
+       description:'1757'
+    },
+    {
+      name:'TThe territory of Porus who offered strong resistance to Alexander was situated between the rivers of',
+      description:'Jhelum and Chenab'
+   },
+   {
+    name:'Under Akbar, the Mir Bakshi was required to look after',
+    description:'military affairs'
+ },
 
+ {
+  name:'The system of competitive examination for civil service was accepted in principle in the year',
+  description:'1853'
+},
+{
+ name:'The theory of economic drain of India during British imperialism was propounded by',
+ description:'Dadabhai Naoroji'
+},
+{
+name:'Tripitakas are sacred books of',
+description:'Buddhists'
+},
+
+{
+  name:'In fireworks, the green flame is produced because of',
+  description:'barium'
+},
+{
+ name:'The power to decide an election petition is vested in the',
+ description:'High courts'
+},
+{
+name:'The members of the Rajya Sabha are elected by',
+description:'elected members of the legislative assembly'
+},
+{
+  name:'LPG consists of mainly',
+  description:'methane, butane and propane'
+},
+{
+  name:'What is sentiment analysis in NLP?',
+  description:'The sentiment analysis, also known as opinion mining and emotion AI, is a process of detecting the polarity of the opinion in the text or can be a part of it. It is majorly used to identify, extract, and quantify user or customer reviews’ polarity, survey responses, or social media opinions'
+},
+{
+  name:'What is ambiguity in NLP?',
+  description:'Ambiguity can be referred to as a condition when a word can have multiple interpretations and results in being misunderstood. Natural languages are ambiguous and can make it difficult to process NLP techniques on them, resulting in the wrong outpu'
+},
+{
+  name:'What is the Naive Bayes algorithm, and where is it used in NLP?',
+  description:'Naive Bayes algorithm is used to predict tags of text by calculating the probability for each tag for the text and then providing the one with the highest probability.'
+},
     ];
 
   filter() {
