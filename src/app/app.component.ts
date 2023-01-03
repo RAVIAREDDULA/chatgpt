@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Welcome to Chat Bot Application!';
   i = 0;
+  noresult:any=[];
   constructor(){};
   filterBy: any;
   message: any = [];
@@ -17,6 +18,7 @@ export class AppComponent {
   
   
   book = [
+    
     { name: 'how are you?', description: 'I am good . Thank you ' },
     {
       name: 'how are you doing ',
@@ -528,14 +530,25 @@ description:'elected members of the legislative assembly'
   description:'Naive Bayes algorithm is used to predict tags of text by calculating the probability for each tag for the text and then providing the one with the highest probability.'
 },
     ];
-
+   
   filter() {
+    if(this.filterBy)
+    {     
     this.questions = this.book.filter(qname =>qname.name.toLowerCase().includes(this.filterBy.toLowerCase()));
+     if(this.questions.length>0) 
+     {
     this.message.push(this.questions);
-    this.filterBy = '';
-     
      }
+     else
+     {
+      //this.message.push(this.noresult);
+    this.noresult="No Result Found for searching text!";
+     }
+    this.filterBy = '';
+     }
+  }
   clearchat() {
     this.message = [];
+    this.noresult=[];
   }
 }
