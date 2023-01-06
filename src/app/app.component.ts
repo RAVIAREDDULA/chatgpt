@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { style } from '@angular/animations';
+import { Component,ViewChild } from '@angular/core';
+import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Welcome to Chat Bot Application!';
+  @ViewChild(ScrollToBottomDirective) scroll: ScrollToBottomDirective | undefined;
   i = 0;
+  element:any;
   noresult:any=[];
   constructor(){};
   filterBy: any;
@@ -15,7 +19,7 @@ export class AppComponent {
   questions: any = [];
   sampleImage ='https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png';
   sampleImage1 = 'https://png.pngtree.com/png-vector/20190701/ourmid/pngtree-robot-icon-for-your-project-png-image_1533288.jpg';
-  
+  //logo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_EYfxjvJ1DpqO-Zd69p8O4dvpoDSry-1dCrIUTLOhLt75GZin5w4I_cqCqAkhrOqIYY4&usqp=CAU';
   
   book = [
     
@@ -224,7 +228,7 @@ export class AppComponent {
     {
       name: 'what is the difference between link and compile in angular.js?',
       description:
-        '•	Compile function is used for template DOM Manipulation and to collect all the directives.•	Link function is used for registering DOM listeners as well as instance DOM manipulation and is executed once the template has been cloned ',
+        'Compile function is used for template DOM Manipulation and to collect all the directives.•	Link function is used for registering DOM listeners as well as instance DOM manipulation and is executed once the template has been cloned ',
     },
 
     {
@@ -483,11 +487,7 @@ export class AppComponent {
       name:'TThe territory of Porus who offered strong resistance to Alexander was situated between the rivers of',
       description:'Jhelum and Chenab'
    },
-   {
-    name:'Under Akbar, the Mir Bakshi was required to look after',
-    description:'military affairs'
- },
-
+   
  {
   name:'The system of competitive examination for civil service was accepted in principle in the year',
   description:'1853'
@@ -550,5 +550,18 @@ description:'elected members of the legislative assembly'
   clearchat() {
     this.message = [];
     this.noresult=[];
+    
   }
-}
+ darkmode()
+ {
+  
+ this.element = document.getElementById("myDIV");
+        this.element.style.backgroundColor = "#004953";
+ }
+ lightmode()
+ {
+  this.element = document.getElementById("myDIV");
+        this.element.style.backgroundColor = "#ECF0F1";
+  
+ }
+ }

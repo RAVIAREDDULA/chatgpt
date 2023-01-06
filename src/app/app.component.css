@@ -17,14 +17,16 @@
 div {
     border: 2px solid #ECF0F1;
     border-radius: 4px;
-    height: 550px;
+    height: 480px;
     text-align: center;
     background-color: #ECF0F1;
     margin: 4px, 4px;
     overflow-x: hidden;
     overflow-y: auto;
+    scroll-behavior: auto;
     width: 900px;
     margin-left: 250px;
+    
   }
   .messageto {
     background-color: #0909FF;
@@ -68,7 +70,8 @@ div {
   input {
     border: 2px solid;
     border-radius: 7px;
-    
+    height:20px;
+    text-size-adjust:15px;
 
   }
   img {
@@ -95,3 +98,18 @@ div {
     height:auto;
     
   }
+  .fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+  .tmenu{
+    margin-top: 1px;
+    border-radius:4px;
+    height:auto;
+  }
+  .pos
+  {
+    margin-right:500px;
+  }
+  

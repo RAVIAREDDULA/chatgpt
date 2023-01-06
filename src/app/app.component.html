@@ -1,11 +1,34 @@
+
 <h1 style="font-family: Lato;background-color:pink;border-style:solid;border-width:2px;
 border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
-<div>
-<h2 style="background-color: blue;color: white;margin-top:auto;height:40px;text-align: center;">CHATBOT</h2>
-        
+
+<div class="tmenu">
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="pos">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item (click)="clearchat()">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button  mat-menu-item id="btn-dark" (click)="darkmode();" >
+        <mat-icon>people_outline</mat-icon>
+        <span>Darkmode</span>
+      </button>
+      <button  mat-menu-item id="btn-light" (click)="lightmode();" >
+        <mat-icon>people_outline</mat-icon>
+        <span>Lightmode</span>
+      </button>
+    </mat-menu>
+  </span>
+  <span class="fill-remaining-space"><h2 style="color: white;">CHATBOT</h2></span>
+</mat-toolbar></div>
+  <div #scrollMe [scrollTop]="scrollMe.scrollHeight" id="myDIV">
+<!--<h2 style="background-color: blue;color: white;margin-top:auto;height:40px;text-align: center;">CHATBOT</h2>-->
     <ul *ngFor="let question of message">
-    
-     <b class="messageto"><!--<i style="font-size:24px;color:black" class="fa fa-commenting"> </i
+   <b class="messageto"><!--<i style="font-size:24px;color:black" class="fa fa-commenting"> </i
       >-->&nbsp;{{ question[i].name }}</b><img [src]="sampleImage" /><br />
       <img [src]="sampleImage1" class="rimage"/><b class="messagefrom"><!--<i style="font-size:24px;color:black;" class="fa fa-commenting"> </i    >-->&nbsp;{{ question[i].description }}</b
     ><br />
@@ -24,7 +47,7 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
   [(ngModel)]="filterBy"
   placeholder="&#61442;Write your message here " style="font-family: FontAwesome;"
   autocomplete="off"
-  (keyup.enter)="filter()" size="25"
+  (keyup.enter)="filter()" size="40" height="50"
 />&nbsp;&nbsp;
 <button class="button" (click)="filter()"><b>SUBMIT</b></button>&nbsp;&nbsp;
 <button class="button" (click)="clearchat()"><b>NEW CHAT</b></button><br /></p>
