@@ -58,9 +58,8 @@ div {
     margin-top: -10px;
   }
   .button {
-    border-radius: 10px;
-    background-color:#757575;
-    
+    border-radius:10px;
+    background-color:#757575;    
     color: #ffff;
   }
   .button:hover {
@@ -72,7 +71,6 @@ div {
     border-radius: 7px;
     height:20px;
     text-size-adjust:15px;
-
   }
   img {
     border-radius: 50px;
@@ -113,3 +111,104 @@ div {
     margin-right:500px;
   }
   
+  
+
+
+
+
+
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 100ms;
+    visibility: visible;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-top: auto;
+    
+  }
+ .popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: lightblue;
+  border-radius: 5px;
+  width: 17%;
+  height: 33%;
+  position: relative;
+  
+}
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+  }
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+  cursor: pointer;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  margin-left: 2px;
+  
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.popup1 {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 25%;
+  height: 33%;
+  position: relative;
+  background-color: lightblue;
+  
+}
+.popup1 .close {
+  position: absolute;
+  top: 35px;
+  right: 25px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  
+}
+.popup1 .close:hover {
+  color: #06D85F;
+  cursor: pointer;
+}
+.customize i
+{
+  background-color: #008CBA;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left:0;
+  right:0;
+  top:0;
+  border-style: solid;
+ 
+}

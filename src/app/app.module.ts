@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
@@ -17,7 +18,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,ReactiveFormsModule,MatToolbarModule,MatMenuModule,MatIconModule,MatButtonModule,BrowserAnimationsModule
+    AppRoutingModule,FormsModule,ReactiveFormsModule,MatToolbarModule,MatMenuModule,MatIconModule,MatButtonModule,MatDialogModule,BrowserAnimationsModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],

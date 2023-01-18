@@ -9,18 +9,35 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item (click)="clearchat()">
+      <button  mat-menu-item id="btn-light" (click)="openform();" >
+        <mat-icon>chat</mat-icon>
+        <span>StartChat</span>  
+      </button>
+      <!--<button mat-menu-item (click)="clearchat()">
         <mat-icon>home</mat-icon>
         <span>Home</span>
-      </button>
+      </button>-->
       <button  mat-menu-item id="btn-dark" (click)="darkmode();" >
-        <mat-icon>people_outline</mat-icon>
+        <mat-icon>dark_mode</mat-icon>
         <span>Darkmode</span>
       </button>
       <button  mat-menu-item id="btn-light" (click)="lightmode();" >
-        <mat-icon>people_outline</mat-icon>
-        <span>Lightmode</span>
+        <mat-icon>light_mode</mat-icon>
+        <span>Lightmode</span>  
       </button>
+      <button  mat-menu-item id="btn-light" (click)="displaydata = true" >
+        <mat-icon>people_outline</mat-icon>
+        <span>Send to Operator List</span>  
+      </button>
+      <button  mat-menu-item id="btn-light" (click)="displaysettings = true" >
+        <mat-icon>settings</mat-icon>
+        <span>DisplaySettings</span>  
+      </button>
+      <button  mat-menu-item id="btn-light" (click)="closeform();" >
+        <mat-icon>accessibility</mat-icon>
+        <span>Logout</span>  
+      </button>
+      
     </mat-menu>
   </span>
   <span class="fill-remaining-space"><h2 style="color: white;">CHATBOT</h2></span>
@@ -30,14 +47,14 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
     <ul *ngFor="let question of message">
    <b class="messageto"><!--<i style="font-size:24px;color:black" class="fa fa-commenting"> </i
       >-->&nbsp;{{ question[i].name }}</b><img [src]="sampleImage" /><br />
-      <img [src]="sampleImage1" class="rimage"/><b class="messagefrom"><!--<i style="font-size:24px;color:black;" class="fa fa-commenting"> </i    >-->&nbsp;{{ question[i].description }}</b
+      <img src="{{imageSrc}}" class="rimage"/><b class="messagefrom"><!--<i style="font-size:24px;color:black;" class="fa fa-commenting"> </i    >-->&nbsp;{{ question[i].description }}</b
     ><br />
    
   </ul> 
   <span>{{noresult}}</span>
    
 </div>
- <div class="sendmesg">
+ <div class="sendmesg" id="sendmesg">
   
 <p >
   <!--<b>Start search Text :) Ex:hi</b>
@@ -45,10 +62,148 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
 <input 
   type="text"
   [(ngModel)]="filterBy"
-  placeholder="&#61442;Write your message here " style="font-family: FontAwesome;"
+  placeholder="&#61442;Write your message here" style="font-family:FontAwesome;"
   autocomplete="off"
-  (keyup.enter)="filter()" size="40" height="50"
+  (keyup.enter)="filter()" size="40" 
 />&nbsp;&nbsp;
 <button class="button" (click)="filter()"><b>SUBMIT</b></button>&nbsp;&nbsp;
-<button class="button" (click)="clearchat()"><b>NEW CHAT</b></button><br /></p>
+<button class="button" (click)="clearchat()"><b>NEW CHAT</b></button>&nbsp;&nbsp;
+
+<button type="button" class="button" (click)="popup = true"><b>SEND TO OPERATOR</b></button><br /></p>
 </div>
+<!--<div class="form-popup" id="myForm"> 
+  <form action="/action_page.php" class="form-container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>-->
+<div class="overlay" *ngIf="popup">
+	<div class="popup">
+    
+		<span class="fill-remaining-space"><h2>Add Attributes</h2></span>
+		<a class="close" (click)="popup = false">&times;</a>
+    
+      <form (ngSubmit)="onSubmit();" [formGroup]="contactsForm" #addform="ngForm">
+		
+      <i class="fa fa-user fa-lg"></i><input type="text" placeholder="Name" formControlName="cname" id="cname"  name="cname" required /><br><br>
+      <i class="fa fa-envelope icon"></i><input type="email" placeholder="E-mail" formControlName="cemail" id="cemail" name="cemail" required><br><br>
+      <i class='fa fa-phone'></i><input type="text" placeholder="phone" formControlName="cphno" id="cphno" name="cphno" required><br><br>
+      <input type="submit"  class="button2" value="+ Cusom Attributes">
+     </form>
+     </div>
+  </div>
+  <div class="overlay" *ngIf="displaysettings">
+    <div class="popup" style="width:30%;">
+      <i class="cusomize">
+      <span class="fill-remaining-space"><h2>Customise Bot Dispaly Settings</h2></span>
+		<a class="close" (click)="displaysettings = false">&times;</a>
+      </i>
+       <label>Display Name</label>
+       <input type="text" name="botname" id="botname"  required><br><br>
+        <label>BackgroundColor</label>
+      <select [(ngModel)]="selectedname" name="colorselect" id="colorselect" (change)="botbackgroundcolor($event);">
+        <option value="">---Select the color---</option>
+        <option value="#FF0000">Red</option>
+        <option value="#00FFFF">Cyan</option>
+      <option value="#0000FF">Blue</option>
+<option value="#00008B">DarkBlue</option>
+<option value="#ADD8E6">LightBlue</option>
+<option value="#800080">Purple</option>
+<option value="#FFFF00">Yellow</option>
+<option value="#00FF00">Lime</option>
+<option value="#FF00FF">Magenta</option>
+<option value="#FFFFFF">white</option>
+<option value="#C0C0C0">Silver</option>
+<option value="#808080">Gary</option>
+<option value="#000000">Black</option>
+<option value="#FFA500">Orange</option>
+<option value="#A52A2A">Brown</option>
+<option value="#800000">Maroon</option>
+<option value="#008000">Green</option>
+<option value="#808000">Olive</option>
+<option value="#7FFFD4">Aquamarine</option>
+<option value="#FFC0CB">Pink</option>
+<option value="#3D3C3A">Iridium</option>
+<option value="#87AFC7">Columbia Blue</option>
+<option value="#6495ED">CornflowerBlue</option>
+<option value="#3BB9FF">Midday Blue</option>
+<option value="#2E8B57">SeaGreen</option>
+<option value="#50C878">Emerald</option>
+<option value="#F2BB66">Macaroni</option>
+<option value="#CD5C5C">IndianRed</option>
+        </select><br><br>
+       <label>TextFontStyle</label>
+        <select name="textfont" id="textfont" [(ngModel)]="changedtext"  (change)="chagefont($event);">
+          <option value="">--Choose an option--</option>
+          <option value="arial">Arial</option> 
+          <option value="Times New Roman">Times New Roman</option> 
+          <option value="impact">Impact</option>
+          <option value="Calibri">Calibri</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="Trebuchet MS">Trebuchet MS</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Garamond">Garamond</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Brush Script MT">Brush Script MT</option>
+           </select><br><br>
+          <label>Display Image</label>&nbsp;&nbsp;
+          <button *ngFor="let imageButton of options; let i = index" (click)="onClick(imageButton)" class="button">{{i}}</button><br>
+          <img src="{{imageSrc}}">
+        
+      </div>
+
+  </div>
+
+
+<div class="overlay"  *ngIf="displaydata">
+    <div class="popup1">
+    <span><h2>The Send to Operator Data</h2></span>
+    <a class="close" (click)="displaydata = false">&times;</a>
+  <table border="2" align="center">
+       <tr>
+        <th>S.No</th>
+        <th>Name</th>
+      <th>E-mail</th>
+      <th>PhoneNo</th>
+      
+    </tr>
+    <tr *ngFor="let data of cdata;let i=index">
+    <td>{{i+1}}</td>
+     <td>{{data.cname}}</td>
+     <td>{{data.cemail}}</td>
+     <td>{{data.cphno}}</td>
+     <!----<td class="edit">
+     <a href="javascript:void(0)" (click)="editForm(j)">
+        Edit
+      </a>
+    </td>-->
+    </tr>
+  </table>
+
+
+  </div>
+</div>
+<!-- 
+<div class="overlay" *ngIf="isEdit">
+  <div class="popup">
+  <a href="javascript:void(0)">
+    <span>
+      <i class="icon-plus"></i>
+    </span>
+    <p (click)="submitform();">Update Contact</p>
+  </a></div>
+</div>
+ <ul *ngFor="let data of cdata">
+  <li>{{data.cname}}</li>
+  <li>{{data.cemail}}</li>
+  <li>{{data.cphno}}</li>
+</ul>-->           
