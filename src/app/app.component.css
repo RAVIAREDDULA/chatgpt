@@ -212,3 +212,24 @@ div {
   border-style: solid;
  
 }
+.validchats
+{
+  
+  background-color: lightgrey;
+  width: 170px;
+  height: auto;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid ;
+  display: inline;
+  
+}
+.chatdisplay
+{
+  background-color:#a39193;
+  border:2px solid  ;
+  width: 510px;
+  height: auto;
+  padding: 20px;
+  margin: 10px;
+}

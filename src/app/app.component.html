@@ -33,6 +33,10 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
         <mat-icon>settings</mat-icon>
         <span>DisplaySettings</span>  
       </button>
+      <button  mat-menu-item id="btn-light" (click)="botperformance= true" >
+        <mat-icon>touch_app</mat-icon>
+        <span>Bot Performance</span>  
+      </button>
       <button  mat-menu-item id="btn-light" (click)="closeform();" >
         <mat-icon>accessibility</mat-icon>
         <span>Logout</span>  
@@ -50,17 +54,16 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
    <b class="messageto"><!--<i style="font-size:24px;color:black" class="fa fa-commenting"> </i
       >-->&nbsp;{{ question[i].question.name}}</b><img [src]="sampleImage" /><i>{{ question[i].time |date:'hh:mm a'}}</i><br />
      <img src="{{imageSrc}}" class="rimage"/><b class="messagefrom">&nbsp;{{ question[i].question.description }}</b><br/>
-     <i style="position: relative;right:40%;margin-top:60%">{{question[i].time |date:'hh:mm a'}}</i>
+     <i style="position: relative;right:45%;margin-top:60%">{{question[i].time |date:'hh:mm a'}}</i>
   </ul> <br><br>
   <span style="background-color:yellow">{{noresult}}</span>
-   
+  <!--<emoji-mart class="emoji-mart" sets="{{set}}" *ngIf="showEmojiPicker"  title="Pick your emoji…" (emojiSelect)="addEmoji($event)"></emoji-mart>-->
 </div>
  <div class="sendmesg" id="sendmesg">
-   
+  
 <p >
-  <!--<b>Start search Text :) Ex:hi</b>
-  <span class="fa fa-meh-o" style="font-size:20px;color:white;margin-left:50px;display:inline;"></span>-->
-<input 
+ 
+  <input 
   type="text" 
   [(ngModel)]="filterBy"
   placeholder="&#61442;Write your message here" style="font-family:FontAwesome;"
@@ -72,20 +75,6 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
 
 <button type="button" class="button" (click)="popup = true"><b>SEND TO OPERATOR</b></button><br /></p>
 </div>
-<!--<div class="form-popup" id="myForm"> 
-  <form action="/action_page.php" class="form-container">
-    <h1>Login</h1>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-</div>-->
 <div class="overlay" *ngIf="popup">
 	<div class="popup">
     
@@ -101,6 +90,31 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
      </form>
      </div>
   </div>
+  <div class="overlay" *ngIf="botperformance" >
+    <div class="popup" style="width:40%; height: auto;">
+      <b class="cusomize">
+      <span class="fill-remaining-space"><h2> Bot Performance?</h2></span>
+		<a class="close" (click)="botperformance = false">&times;</a>
+      </b>
+    <div class="chatdisplay" style="display: flex;height: auto;">
+      <div class="validchats">
+        <label>Total chats</label><mat-icon style="color:blue;">message</mat-icon><br><br><b>{{count+validcount}}</b>
+       </div>
+      <div class="validchats">
+      <label>Valid chats</label><mat-icon style="color:yellow;">message</mat-icon><br><br><b>{{validcount}}</b>
+     </div>
+     <div class="validchats" style="width:200px;">
+      <label>Invalid chats</label><mat-icon style="color:red;">face</mat-icon><br><br><b>{{count}}</b>
+     </div>
+     
+    </div>
+      </div>
+      </div>
+
+
+
+
+
   <div class="overlay" *ngIf="displaysettings">
     <div class="popup" style="width:30%;">
       <i class="cusomize">
@@ -182,29 +196,11 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
      <td>{{data.cname}}</td>
      <td>{{data.cemail}}</td>
      <td>{{data.cphno}}</td>
-     <!----<td class="edit">
-     <a href="javascript:void(0)" (click)="editForm(j)">
-        Edit
-      </a>
-    </td>-->
     </tr>
   </table>
 
 
   </div>
 </div>
-<!-- 
-<div class="overlay" *ngIf="isEdit">
-  <div class="popup">
-  <a href="javascript:void(0)">
-    <span>
-      <i class="icon-plus"></i>
-    </span>
-    <p (click)="submitform();">Update Contact</p>
-  </a></div>
-</div>
- <ul *ngFor="let data of cdata">
-  <li>{{data.cname}}</li>
-  <li>{{data.cemail}}</li>
-  <li>{{data.cphno}}</li>
-</ul>-->           
+{{message.length}}<!--valid messages-->
+{{mycountvalue}}

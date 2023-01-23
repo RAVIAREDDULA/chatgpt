@@ -12,6 +12,8 @@ import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,ScrollToBottomDirective

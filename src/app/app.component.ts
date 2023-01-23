@@ -3,6 +3,7 @@ import { Component,ViewChild } from '@angular/core';
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { Validators,FormGroup,FormControl,FormsModule,ReactiveFormsModule,FormBuilder, NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +16,7 @@ export class AppComponent {
   popup1=false;
   displaydata=false;
   displaysettings=false;
+  botperformance=false;
   i=0;
    element:any;
   element1:any;
@@ -22,7 +24,7 @@ export class AppComponent {
   submited=false;
   noresult:any=[];
   displayname='';
- 
+  count:any=0;
   submitted = false;
   filterBy: any;
   imageSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE1LfcxsSCgnSuI663-3IK6x_GRknUw8K87G_PBbnj5Q&s';
@@ -43,11 +45,15 @@ export class AppComponent {
          
   sampleImage ='https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png';
   sampleImage1 = 'https://png.pngtree.com/png-vector/20190701/ourmid/pngtree-robot-icon-for-your-project-png-image_1533288.jpg';
-
+  mycountvalue:any;
+  key: string = 'item';
+  validcount:any=0;
  constructor()
  {
   
+  
  };
+
 contactsForm=new FormGroup({  
       id:new FormControl(''),
       cname:new FormControl("", Validators.required),
@@ -67,7 +73,23 @@ contactsForm=new FormGroup({
       this.intervalId = setInterval(() => {
         this.time = new Date();
       }, 1000);
+    }
+    toggleEmojiPicker() {
+      console.log(this.showEmojiPicker);
+          this.showEmojiPicker = !this.showEmojiPicker;
+    }
+      
+    addEmoji(event:any) {
+      
+      const { filterBy } = this;
+      
+      console.log(`${event.emoji.native}`)
+      const text = `${filterBy}${event.emoji.native}`;
+  
+      this.filterBy = text;
+      // this.showEmojiPicker = false;
     }*/
+
     botbackgroundcolor($event:any)
     {
       this.element=document.getElementById("myDIV");
@@ -95,7 +117,7 @@ contactsForm=new FormGroup({
    
 
 }
-
+  
 mapCurrentTime(questions:any):void{
   return questions.map((x:any)=>{
     return { question:x , time:new Date() }
@@ -110,19 +132,23 @@ filter() {
    if(this.questions.length>0) 
    {
     let questions = this.mapCurrentTime(this.questions);
-  this.message.push(questions);
-  
+    this.message.push(questions);
+    this.validcount++;
    }
    else
    {
     //this.message.push(this.noresult);
+    this.count++;
+    //localStorage.setItem(this.key,this.count);
+  //this.mycountvalue = localStorage.getItem(this.key);
   this.noresult="No Result Found for searching text!";
    }
   this.filterBy = '';
-   
+ 
    }
    
 }
+
 clearchat() {
   this.message = [];
   this.noresult=[];
