@@ -61,6 +61,7 @@ div {
     border-radius:10px;
     background-color:#757575;    
     color: #ffff;
+    height:20px;
   }
   .button:hover {
     background-color: #4caf50;

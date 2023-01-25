@@ -1,7 +1,7 @@
-
-<h1 style="font-family: Lato;background-color:pink;border-style:solid;border-width:2px;
-border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
-
+<div class="tmenu" >
+  <mat-toolbar color="primary" >
+<h1 style="font-family: Lato;text-align:center;margin-left:250px;">{{title}}</h1>
+</mat-toolbar></div>
 <div class="tmenu">
 <mat-toolbar color="primary">
   <span class="fill-remaining-space">
@@ -11,7 +11,7 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
       <button  mat-menu-item id="btn-light" (click)="openform();" >
         <mat-icon>chat</mat-icon>
-        <span>StartChat</span>  
+        <span>Start New Chat</span>  
       </button>
       <!--<button mat-menu-item (click)="clearchat()">
         <mat-icon>home</mat-icon>
@@ -44,7 +44,7 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
       
     </mat-menu>
   </span>
- <!-- <span>{{displayname}}</span>-->
+
   <span class="fill-remaining-space"><h2 style="color: white;">CHATBOT</h2></span>
 </mat-toolbar></div>
   <div #scrollMe [scrollTop]="scrollMe.scrollHeight" id="myDIV">
@@ -57,23 +57,28 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
      <i style="position: relative;right:45%;margin-top:60%">{{question[i].time |date:'hh:mm a'}}</i>
   </ul> <br><br>
   <span style="background-color:yellow">{{noresult}}</span>
-  <!--<emoji-mart class="emoji-mart" sets="{{set}}" *ngIf="showEmojiPicker"  title="Pick your emoji…" (emojiSelect)="addEmoji($event)"></emoji-mart>-->
+ 
 </div>
  <div class="sendmesg" id="sendmesg">
   
-<p >
+<p>
  
   <input 
   type="text" 
-  [(ngModel)]="filterBy"
+  [(ngModel)]="filterBy" 
   placeholder="&#61442;Write your message here" style="font-family:FontAwesome;"
-  autocomplete="off"
-  (keyup.enter)="filter()" size="40" 
+  autocomplete="off" 
+  (keyup.enter)="filter();" size="40" 
 />&nbsp;&nbsp;
-<button class="button" (click)="filter()"><b>SUBMIT</b></button>&nbsp;&nbsp;
-<button class="button" (click)="clearchat()"><b>NEW CHAT</b></button>&nbsp;&nbsp;
+<button mat-flat-button  (click)="filter()" style="border-radius:10px;height:25px;">submit</button>
+<!--<button class="button" (click)="clearchat()"><b>NEW CHAT</b></button>&nbsp;&nbsp;-->&nbsp;&nbsp;
 
-<button type="button" class="button" (click)="popup = true"><b>SEND TO OPERATOR</b></button><br /></p>
+<button mat-flat-button (click)="popup = true" style="border-radius:10px;height:25px">Send to Operator</button>&nbsp;&nbsp;
+<button  (click)="startService()" style="border-radius: 10px;"><mat-icon style="color:blue;height:20px;">settings_voice</mat-icon></button>&nbsp;&nbsp;
+    <button  (click)="stopService()" style="border-radius: 10px;"><mat-icon style="color:red;height:20px;">settings_voice</mat-icon></button>
+<br /></p>
+
+
 </div>
 <div class="overlay" *ngIf="popup">
 	<div class="popup">
@@ -110,12 +115,7 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
     </div>
       </div>
       </div>
-
-
-
-
-
-  <div class="overlay" *ngIf="displaysettings">
+<div class="overlay" *ngIf="displaysettings">
     <div class="popup" style="width:30%;">
       <i class="cusomize">
       <span class="fill-remaining-space"><h2>Customise Bot Dispaly Settings</h2></span>
@@ -202,5 +202,3 @@ border-color:blue;border-radius:25px;text-align:center;">{{title}}</h1>
 
   </div>
 </div>
-{{message.length}}<!--valid messages-->
-{{mycountvalue}}
