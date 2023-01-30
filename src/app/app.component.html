@@ -14,7 +14,7 @@
         <span>Start New Chat</span>  
       </button>
       <!--<button mat-menu-item (click)="clearchat()">
-        <mat-icon>home</mat-icon>
+        <mat-icon>home</mat-icon>   
         <span>Home</span>
       </button>-->
       <button  mat-menu-item id="btn-dark" (click)="darkmode();" >
@@ -74,8 +74,8 @@
 <!--<button class="button" (click)="clearchat()"><b>NEW CHAT</b></button>&nbsp;&nbsp;-->&nbsp;&nbsp;
 
 <button mat-flat-button (click)="popup = true" style="border-radius:10px;height:25px">Send to Operator</button>&nbsp;&nbsp;
-<button  (click)="startService()" style="border-radius: 10px;"><mat-icon style="color:blue;height:20px;">settings_voice</mat-icon></button>&nbsp;&nbsp;
-    <button  (click)="stopService()" style="border-radius: 10px;"><mat-icon style="color:red;height:20px;">settings_voice</mat-icon></button>
+<button  (click)="startService()" style="border-radius: 10px;cursor: pointer;" title="Record Message"><mat-icon style="color:blue;height:20px;">settings_voice</mat-icon></button>&nbsp;&nbsp;
+<button  (click)="stopService()" style="border-radius: 10px;cursor: pointer;" title="Stop Record Message"><mat-icon style="color:red;height:20px;">settings_voice</mat-icon></button>
 <br /></p>
 
 
@@ -103,7 +103,7 @@
       </b>
     <div class="chatdisplay" style="display: flex;height: auto;">
       <div class="validchats">
-        <label>Total chats</label><mat-icon style="color:blue;">message</mat-icon><br><br><b>{{count+validcount}}</b>
+        <label>Total chats</label><mat-icon style="color:blue;">message</mat-icon><br><br><b>{{total}}</b>
        </div>
       <div class="validchats">
       <label>Valid chats</label><mat-icon style="color:yellow;">message</mat-icon><br><br><b>{{validcount}}</b>
