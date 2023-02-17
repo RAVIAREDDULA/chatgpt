@@ -38,7 +38,7 @@ export class VoiceRecognitionService {
     this.recognition.addEventListener('end', (condition:any) => {
       if (this.isStoppedSpeechRecog) {
         this.recognition.stop();
-        console.log("End speech recognition")
+        //console.log("End speech recognition")
       } else {
         this.wordConcat()
         this.recognition.start();
@@ -49,7 +49,7 @@ export class VoiceRecognitionService {
     this.isStoppedSpeechRecog = true;
     this.wordConcat()
     this.recognition.stop();
-    console.log("End speech recognition")
+    //console.log("End speech recognition")
   }
 
   wordConcat() {

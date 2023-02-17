@@ -81,6 +81,7 @@ export class AppComponent {
 
     onClick(imageNameObject:any) {
       this.imageSrc = imageNameObject.src;
+    
       
       
     }
